@@ -1,0 +1,67 @@
+<header class="{{headerClass}} h-auto w-full  fixed top-0 left-0 pt-4 text-white transition-all duration-500 linear z-[9999]" 
+    x-data="{ isOpen : false }" 
+    :class="isOpen ? 'min-h-screen' : 'min-h-[var(--setHeaderHeight)]'"
+    x-init="$watch('isOpen', value => isOpen ? document.body.classList.add('h-screen', 'overflow-hidden') : document.body.classList.remove('h-screen', 'overflow-hidden') )"
+    >
+
+    <div class="px-4 flex justify-between w-full pb-4">
+        <a href="/">
+            {% if logoGreen %}
+                <img src="{{ site.theme.link }}/assets/img/svg/logo-verde.svg" class="ml-[4px]" alt="parco italia logo">
+            {% else %}
+                <img src="{{ site.theme.link }}/assets/img/svg/logo-bianco.svg" class="ml-[4px]" alt="parco italia logo">
+            {% endif %}
+        </a>
+
+        <nav id="headerMenu" >
+            <button @click="isOpen = !isOpen" class="w-[23px] h-[23px] space-y-1.5 flex flex-col justify-center items-center">
+                <span class="w-full h-[4px] bg-white block transition-transform duration-300" :class="isOpen ? 'rotate-45  translate-y-[13px]' : '' "></span>
+                <span class="w-full h-[4px] bg-white block transition-opacity duration-300" :class="isOpen ? 'opacity-0' : '' "></span>
+                <span class="w-full h-[4px] bg-white block transition-transform duration-300" :class="isOpen ? '-rotate-45 translate-y-[-5px]' : '' "></span>
+            </button>
+        </nav>
+        
+    </div>
+
+    <ul x-show="isOpen" x-collapse class="parco-container " :class="isOpen && 'border-t border-b divide-y divide-white' ">
+        {% for item in headerMenu.items %}
+            <li>
+                
+                {% if item.children|length > 0  %}
+
+                    <div x-data="{isOpenSubMenu{{loop.index}} : false}" >
+
+                        <div class="flex flex-wrap items-baseline justify-between w-full cursor-pointer"  @click="isOpenSubMenu{{loop.index}} = !isOpenSubMenu{{loop.index}}">
+                            
+                            <p class="py-2 lg:w-5/12 w-10/12 flex parco-type lg:text-60 lg:leading-[4rem] text-48 lg:order-1 order-1 {{ item.classes|join(' ') }}">{{ item.title }}</p>
+
+                            <ul x-show="isOpenSubMenu{{loop.index}}" x-collapse class="lg:w-6/12 w-full lg:-translate-y-2 lg:order-2 order-3 lg:py-0 py-4">
+                                {% for child in item.children %}
+                                    <li class="child-item lg:text-30 text-18 ">
+                                        <a href="{{ child.link }}">{{ child.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <div class="lg:w-1/12 w-2/12 lg:order-3 order-2">
+                                <div class="relative h-[23px] w-[23px] ml-auto transition-transform duration-300" :class="isOpenSubMenu{{loop.index}} ? 'rotate-45' : '' ">
+                                    <span class="w-full h-[4px] bg-white block absolute inset-0 m-auto"></span>
+                                    <span class="w-full h-[4px] bg-white block absolute inset-0 m-auto rotate-90"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                {% else %}
+
+                    <a href="{{ item.link  }}" class="py-2 flex parco-type lg:text-60 text-48 {{ item.classes|join(' ') }}">{{ item.title }}</a>
+
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+</header>
+
+

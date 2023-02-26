@@ -1,0 +1,117 @@
+{% extends "base.twig" %}
+
+{% block header %}
+    {% include 'partial/header.twig' with { headerClass : 'bg-orange' } %}
+{% endblock %}
+
+{% block content %}
+
+    {# Hero #}
+    <section class="bg-orange">
+        <div class="parco-container lg:space-y-20 space-y-12 lg:max-w-[63rem] py-12">
+            <h1 class="flex space-x-2 lg:text-120 text-48 parco-type  text-white items-center">
+                <img class="lg:max-w-max max-w-[3rem]" src="{{ site.theme.link }}/assets/img/svg/network-icon-link.svg" alt="Icona network">
+                <span>The network</span>
+            </h1>
+            <h2 class="lg:text-60 text-30 lg:leading-[auto] leading-none parco-type text-white">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque culpa veritatis pariatur commodi adipisci cupiditate!
+            </h2>
+        </div>
+    </section>
+
+
+    {# Promoter #}
+    <section class="bg-orange">
+        <div class="parco-container border-t border-white">
+            <div class="lg:pt-12 pt-6">
+                {% include 'partial/blocks/info-circle.twig' with {
+                    circleColor : 'bg-white',
+                    textColor : 'text-white',
+                    text:'Promoter'
+                } %}
+            </div>
+            <div class="py-12">
+                <div class="lg:grid lg:grid-cols-3">
+                    <img src="{{ site.theme.link }}/assets/img/svg/amazon-bianco.svg" class="m-auto w-[11rem] lg:mb-0 mb-12" alt="amazon logo">
+                    <div class="lg:col-span-2 lg:max-w-[44rem] flex">
+                        <p class="m-auto">Parco Italia è un progetto supportato da <span class="lg:text-27 text-white">Amazon International Srl</span>, nel contesto dello stanziamento da parte dell’azienda di 20 milioni di euro per nature-based solutions, con l’obiettivo di migliorare le condizioni ambientali nelle comunità in cui opera in Europa, come parte del suo Right Now Climate Fund.</p>
+                    </div>
+                </div>
+                <div class="lg:grid lg:grid-cols-3 pt-4">
+                    <div class="lg:col-start-2 lg:col-span-2 lg:max-w-[44rem] flex">
+                        <p class="lg:text-16 text-12 lg:leading-[auto] leading-[1rem]">
+                            Ugo Falcone, EU Retail GM Staff, Senior Program Manager <br>
+                            Helen Mctaggart, Senior Sustainability Director <br>
+                            Steve Kellett, Senior Program Manager, Nature based <br>
+                            solutions Alessandro Chiarmasso, Head of PR Italy <br>
+                            Massimiliano Santini - Corporate Communications Manager <br>
+                            William Callegari - Operations Public Policy manager IPP
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Partners #}
+    <section class="bg-orange">
+        <div class="parco-container border-t border-white">
+            <div class="lg:pt-12 pt-6">
+                {% include 'partial/blocks/info-circle.twig' with {
+                    circleColor : 'bg-white',
+                    textColor : 'text-white',
+                    text:'Partners'
+                } %}
+            </div>
+            <div class="py-12">
+                <div class="lg:grid lg:grid-cols-3">
+                    <img src="{{ site.theme.link }}/assets/img/svg/boeri-bianco.svg" class="m-auto w-[11rem] lg:mb-0 mb-12" alt="amazon logo">
+                    <div class="lg:col-span-2 lg:max-w-[44rem] flex">
+                        <p class="m-auto">Con sede a Milano e uffici a Shanghai e Tirana, dal 1993 <span class="lg:text-27 text-white">Stefano Boeri Architetti</span> si dedica alla ricerca e alla pratica principalmente nel campo dell’architettura e dell’urbanistica, ma anche dell’interior design e della cultura.</p>
+                    </div>
+                </div>
+                <div class="lg:grid lg:grid-cols-3 pt-4">
+                    <div class="lg:col-start-2 lg:col-span-2 lg:max-w-[44rem] flex">
+                        <p class="lg:text-16 text-12 lg:leading-[auto] leading-[1rem]">
+                            Stefano Boeri, PhD, Founder of Stefano Boeri Architetti <br>
+                            Maria Chiara Pastore, PhD, Director of the Research Department <br>
+                            Livia Shamir, PhD Candidate, Project Manager, Senior Researcher <br>
+                            Simone Marchetti, Architect and Researcher <br>
+                            Sofia Paoli, Architect and Researcher <br>
+                            Luis Pimentel, Architect and Researcher
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="py-12">
+                <div class="lg:grid lg:grid-cols-3">
+                    <img src="{{ site.theme.link }}/assets/img/svg/alberi-bianco.svg" class="m-auto w-[11rem] lg:mb-0 mb-12" alt="amazon logo">
+                    <div class="lg:col-span-2 lg:max-w-[44rem] flex">
+                        <p class="m-auto">La <span class="lg:text-27 text-white">Fondazione AlberItalia</span> ha come scopo principale il contrasto e la mitigazione del cambiamento climatico indotto dall’uomo utilizzando soluzioni basate sulla natura e persegue finalità civiche, solidaristiche e di utilità sociale. L’attività della Fondazione si articola secondo le seguenti modalità.</p>
+                    </div>
+                </div>
+                <div class="lg:grid lg:grid-cols-3 pt-4">
+                    <div class="lg:col-start-2 lg:col-span-2 lg:max-w-[44rem] flex">
+                        <p class="lg:text-16 text-12 lg:leading-[auto] leading-[1rem]">
+                            Marco Marchetti, PhD, President <br>
+                            Fabio Salbitano, PhD, Scientific Committee <br>
+                            Barbara Mariotti, PhD, Consultant researcher <br>
+                            Angela Rositi, Consultant researcher <br>
+                            Giorgio Vacchiano, PhD, Scientific Committee <br>
+                            Paolo Mori, PhD, Director <br>
+                            Davide Travaglini, Scientific Committee <br>
+                            Renzo Motta, Scientific Committee
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'partial/footer.twig' with { footerClass : 'bg-orange lg:pt-24 pt-8 text-white' } %}
+{% endblock %}
+

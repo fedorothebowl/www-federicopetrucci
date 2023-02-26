@@ -1,0 +1,119 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="bg-green">
+
+        {# Hero #}
+        <section class="text-white parco-container lg:pb-16 pb-12">
+            <h1 class="lg:text-120 text-48 parco-type max-w-[70rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+            <h2 class="lg:pt-16 pt-12 max-w-[51rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua do eiusmod tempor incididunt.</h2>
+            <a href="" class="btn-black mt-8">Scopri di più</a> 
+        </section>
+
+        {# Cartina #}
+        <section class="lg:bg-green bg-white">
+            <div class="relative">
+
+                <img src="{{ site.theme.link }}/assets/img/pages/home/italy-dk.png" class="lg:block hidden w-full" alt="background italy">
+                
+                <div class="w-full h-full lg:absolute top-0 left-0">
+                    <div class="z-[1] relative flex flex-col h-full py-8">
+
+                        <div class="py-4 lg:block hidden parco-container">
+                            {% include 'partial/blocks/info-circle.twig' with {
+                                circleColor : 'bg-black',
+                                textColor : 'text-black',
+                                text:'The current state'
+                            } %}
+                        </div>
+
+                        <img src="{{ site.theme.link }}/assets/img/pages/home/italy-sm.png" class="lg:hidden w-full lg:order-4 order-2" alt="background italy">
+
+                        <div class="lg:order-2 order-1 parco-container">
+                            <h3 class="parco-type lg:text-60 text-30 text-green lg:pb-0 pb-4">Title of Map</h3>
+                        </div>
+        
+                        <div class="lg:order-3 order-3 mt-auto parco-container lg:pt-0 pt-4">
+                            <p class="lg:max-w-[34rem] mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio architecto consectetur rerum, eaque minima adipisci. Natus autem architecto, quibusdam necessitatibus libero aut vel id illo facilis ratione deleniti fugit commodi ad suscipit ut voluptatibus doloribus et asperiores nemo cum? Deserunt.</p>
+                            <a href="" class="btn-black akzidenz-medium" download>Scarica la mappa</a>
+                        </div>
+                    </div>    
+                </div>
+            
+            </div>
+        </section>
+
+        {# Project #}
+        <section class="bg-green pt-8 lg:pb-12 pb-8">
+
+            <div class="bg-sand rounded-xl parco-container p-4">
+                {% include 'partial/blocks/info-circle.twig' with {
+                    circleColor : 'bg-green',
+                    textColor : 'text-green',
+                    text:'Save the date'
+                } %}
+                <div class="lg:grid lg:grid-cols-12 text-green lg:py-8 py-4">
+                    <div class="lg:col-span-6 lg:text-60 text-30 parco-type  lg:!tracking-[-0.01em] lg:py-0 py-4">
+                        Evento di <br>presentazione
+                    </div>
+                    <div class="lg:col-span-2 lg:border-l lg:border-green lg:pl-2 lg:flex lg:flex-col lg:justify-between">
+                        <p class="lg:block hidden">Quando</p>
+                        <p>24 febbraio 2023 <br class="lg:block hidden">H 21:30</p>
+                    </div>
+                    <div class="lg:col-span-2 lg:border-l lg:border-green lg:pl-2 lg:flex lg:flex-col lg:justify-between">
+                        <p class="lg:block hidden">Dove</p>
+                        <p>Palazzo Reale <br class="lg:block hidden">Milano</p>
+                    </div>
+                    <div class="lg:col-span-2 lg:border-l lg:border-green lg:pl-2 lg:flex lg:flex-col lg:justify-between">
+                        <p class="lg:block hidden">Partecipa</p>
+                        <a href="" class="btn-black w-max lg:mt-0 mt-4 text-18">Registrati</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="lg:py-8 pt-8 pb-0 parco-container">
+                <h3 class="lg:text-60 text-30 parco-type text-white lg:max-w-[63rem]">
+                    The project envisioned to <span class="text-black">extend</span>, <span class="text-black">connect</span>, <span class="text-black">protect</span> a network of natural areas  that interconnect Italian urban and coastal areas to forests, creating connections between the Alpine systems, the Apennine and the Mediterranean coast.
+                </h3>
+                <a href="" class="btn-black lg:text-18 lg:mt-8 mt-4" download>Scopri il progetto</a>
+            </div>
+        
+        </section>
+
+
+        {# the vision #}
+        {% include 'partial/blocks/paragraph.twig' 
+            with {
+                smallTitle:'Save the date',
+                title:'The vision of Parco Italia is to improve the forest area and environmental benefits of Italian lands.',
+                description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua do eiusmod tempor incididunt.',
+                titleCta:'Scopri la vision',
+                linkCta:'#'
+            }
+        %}
+
+        {# The goals #}
+        {% include 'partial/blocks/goals.twig' %}
+        <section class="bg-green lg:pt-16 pt-8 pb-8">
+            <div class="parco-container">
+                <a href="" class="btn-black text-18">Leggi i goals</a>
+            </div>
+        </section>
+
+        {# the network #}
+        {% include 'partial/blocks/paragraph.twig' 
+            with {
+                smallTitle:'The Network',
+                title:'The vision of Parco Italia is to improve the forest area and environmental benefits of Italian lands.',
+                description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua do eiusmod tempor incididunt.',
+                titleCta:'Scopri la vision',
+                linkCta:'#'
+            }
+        %}
+
+        {# Faqs #}
+        {% include 'partial/sliders/faqs.twig' with { faqs : faqsComponent } %}
+
+    </div>
+{% endblock %}
+

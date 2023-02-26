@@ -1,0 +1,38 @@
+<footer class="{{footerClass}}">
+    <div class="parco-container lg:space-y-4 space-y-12 pb-4">
+        {% if logoGreen %}
+            <img src="{{ site.theme.link }}/assets/img/svg/logo-verde.svg" alt="parco italia logo">
+        {% else %}
+            <img src="{{ site.theme.link }}/assets/img/svg/logo-bianco.svg" alt="parco italia logo"> 
+        {% endif %}
+
+        <p class="lg:text-16 text-10 lg:max-w-[24rem] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet laborum quos tempora quisquam repellendus eaque voluptas ab molestiae explicabo, praesentium quam, quasi cumque voluptatibus! Ratione, labore placeat laboriosam atque esse non minima tempora libero quibusdam aliquam nobis possimus unde.</p>
+    
+        <div class="lg:grid lg:grid-cols-12 lg:space-y-0 space-y-6">
+            <div class="lg:col-span-5 flex flex-col justify-between items-start">
+                <p class="lg:text-15 text-18 pb-4">Promoter</p>
+                {% if logoGreen %}
+                    <img src="{{ site.theme.link }}/assets/img/svg/amazon-verde.svg" class="lg:w-auto w-[11rem]" alt="amazon logo">
+                {% else %}
+                    <img src="{{ site.theme.link }}/assets/img/svg/amazon-bianco.svg" class="lg:w-auto w-[11rem]" alt="amazon logo">
+                {% endif %}
+            </div>
+            <div class="lg:col-span-5 flex flex-col justify-between items-start">
+                <p class="lg:text-15 text-18 pb-4">Partners</p>
+                <div class="flex lg:space-x-4 space-x-12">
+                    {% if logoGreen %}
+                        <img src="{{ site.theme.link }}/assets/img/svg/boeri-verde.svg" alt="boeri logo">
+                        <img src="{{ site.theme.link }}/assets/img/svg/alberi-verde.svg" alt="alberi logo">
+                    {% else %}
+                        <img src="{{ site.theme.link }}/assets/img/svg/boeri-bianco.svg" alt="boeri logo">
+                        <img src="{{ site.theme.link }}/assets/img/svg/alberi-bianco.svg" alt="alberi logo">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="lg:col-span-2 flex flex-col lg:justify-end lg:items-end">
+                <p class="lg:text-16 text-12 ">Design <a href="https://parco.studio/" target="_blank">Parco Studio</a></p>
+            </div>
+        </div>
+
+    </div>
+</footer>

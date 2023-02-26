@@ -1,0 +1,43 @@
+{% extends "base.twig" %}
+
+{% block header %}
+    {% include 'partial/header.twig' with { headerClass : 'bg-sand header-green', logoGreen:true } %}
+{% endblock %}
+
+{% block content %}
+
+    {# Hero #}
+    <section class="bg-sand">
+        <div class="parco-container lg:space-y-20 space-y-12 lg:max-w-[63rem] py-12">
+            <h1 class="flex space-x-2 lg:text-120 text-48 parco-type items-start text-green">
+                <img class="lg:max-w-max max-w-[3rem]" src="{{ site.theme.link }}/assets/img/svg/goals-icon-circle.svg" alt="Icona circolare">
+                <span>The goals</span>
+            </h1>
+            <h2 class="lg:text-60 text-30 lg:leading-[auto] leading-none parco-type text-green">
+                Improve the forest area and environmental benefits of Italian lands, working on the ecosystems that most of all generate biodiversity, forests. 
+            </h2>
+            <div class="space-y-4">
+                {% include 'partial/blocks/info-circle.twig' with {
+                    circleColor : 'bg-green',
+                    textColor : 'text-black',
+                    text:'National vision'
+                } %}
+                <p class="pt-4">The vision of Parco Italia is to improve the forest area and environmental benefits of Italian lands, working on the ecosystems that most of all generate biodiversity, forests. The forests, both new and existing ones, will be the first beneficiaries of our care.</p>
+                <p>All interventions are designed to be part of a broader vision that takes into consideration ecosystem services, climate mitigation and adaptation, and ecological connectivity over the entire national territory and beyond.</p>
+            </div>
+        </div>
+    </section>
+
+    {# The goals #}
+    {% include 'partial/blocks/goals.twig' %}
+
+    {# What to do #}
+    {% include 'partial/blocks/what-we-do.twig' %}
+
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'partial/footer.twig' with { footerClass : 'bg-sand footer-green lg:pt-24 pt-8 text-white' , logoGreen:true } %}
+{% endblock %}
+

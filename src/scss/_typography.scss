@@ -1,0 +1,58 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+    body {
+        font-family: "Akzidenz-medium", Helvetica, Arial, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        @apply lg:text-22 text-18;
+    }
+
+    // Akzidenz Regular
+    .akzidenz-italic {
+        font-family: "Akzidenz-italic" !important;
+    }
+    @font-face {
+        font-family: "Akzidenz";
+        font-weight: normal;
+        src: url("/wp-content/themes/parcoitalia/assets/fonts/akzidenz-grotesk-pro/Akzidenz-Grotesk-Pro-Regular.otf") format("opentype");
+    }
+    @font-face {
+        font-family: "Akzidenz-italic";
+        font-weight: normal;
+        src: url("/wp-content/themes/parcoitalia/assets/fonts/akzidenz-grotesk-pro/Akzidenz-Grotesk-Pro-Italic.otf") format("opentype");
+    }
+
+    // Akzidenz Medium
+    .akzidenz-medium {
+        font-family: "Akzidenz-medium" !important;
+    }
+    .akzidenz-medium-italic {
+        font-family: "Akzidenz-medium-italic" !important;
+    }
+    @font-face {
+        font-family: "Akzidenz-medium";
+        src: url("/wp-content/themes/parcoitalia/assets/fonts/akzidenz-grotesk-pro/Akzidenz-Grotesk-Pro-Med-Regular.otf") format("opentype");
+    }
+    @font-face {
+        font-family: "Akzidenz-medium-italic";
+        src: url("/wp-content/themes/parcoitalia/assets/fonts/akzidenz-grotesk-pro/Akzidenz-Grotesk-Pro-Med-Italic.otf") format("opentype");
+    }
+
+    // parco type
+    .parco-type {
+        font-family: "parco-type" !important;
+    }
+    @font-face {
+        font-family: "parco-type";
+        src: 
+            url("/wp-content/themes/parcoitalia/assets/fonts/parcoItalia-type/ParcoItaliaType-Medium.woff") format("woff"),
+            url("/wp-content/themes/parcoitalia/assets/fonts/parcoItalia-type/ParcoItaliaType-Medium.woff2") format("woff2"),
+            url("/wp-content/themes/parcoitalia/assets/fonts/parcoItalia-type/ParcoItaliaType-Medium.otf") format("opentype");
+    }
+}
+
+

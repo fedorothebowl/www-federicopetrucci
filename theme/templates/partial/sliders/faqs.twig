@@ -1,0 +1,33 @@
+
+<section class="bg-green py-4" x-data="sliders();">
+
+    <div class="parco-container">
+        {% include 'partial/blocks/info-circle.twig' with {
+            circleColor : 'bg-white',
+            textColor : 'text-white',
+            text:'Faqs'
+        } %}
+    </div>
+
+        <div class="pt-8 lg:pb-16 pb-8">
+            <div class="swiper" x-ref="faqs">
+                <div class="swiper-wrapper">
+                    {% for faq in faqs.first %}
+                        <div class="swiper-slide lg:text-60 text-30 parco-type  text-white ">
+                            <p class="mx-auto lg:max-w-[58rem] px-4">{{faq.answer}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <img src="{{ site.theme.link }}/assets/img/svg/faqs-next.svg" alt="next faq" class="cursor-pointer lg:block hidden next-faq absolute top-0 bottom-0 right-4 my-auto z-[1] h-max">
+                <img src="{{ site.theme.link }}/assets/img/svg/faqs-prev.svg" alt="prev faq" class="cursor-pointer lg:block hidden prev-faq absolute top-0 bottom-0 left-4 my-auto z-[1] h-max">
+                <div class="lg:hidden faq-pagination pt-8 parco-container"></div>            
+            </div>
+        </div>
+
+        <div class="parco-container lg:pt-8">
+            <a href="" class="btn-black text-18">Scopri tutte le risposte</a>
+        </div>
+
+
+
+</section>

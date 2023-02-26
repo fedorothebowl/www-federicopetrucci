@@ -1,0 +1,58 @@
+    {% block html_head_container %}
+        {% include 'html-header.twig' %}
+    {% block head %}{% endblock %}
+    </head>
+{% endblock %}
+
+{% set faqsComponent = {
+    'first':[
+        {
+            answer : 'a 1.What is landscape fragmentation and how to reach connectivity between natural areas?',
+            question : '',
+            description: '',
+            img:''
+        },
+        {
+            answer : 'a 2.What is landscape fragmentation and how to reach connectivity between natural areas?',
+            question : '',
+            description: '',
+            img:''
+        }
+    ],
+    'second':[
+        {
+            answer : 'a 1.What is landscape fragmentation and how to reach connectivity between natural areas?',
+            question : '',
+            description: '',
+            img:''
+        },
+        {
+            answer : 'a 2.What is landscape fragmentation and how to reach connectivity between natural areas?',
+            question : '',
+            description: '',
+            img:''
+        }
+    ],
+
+} %}
+
+    <body class="{{ baseClass }} page-{{ page.slug }} mt-[var(--setHeaderHeight)]" data-template="base.twig">
+
+        {% block header %}
+            {% include 'partial/header.twig' with { headerClass : 'bg-green' } %}
+        {% endblock %}
+
+        <main id="content" role="main">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% block footer %}
+            {% include 'partial/footer.twig' with { footerClass : 'bg-green lg:pt-24 pt-8 text-white' } %}
+        {% endblock %}
+
+    {{ function('wp_footer') }}
+    
+    </body>
+</html>
+
+

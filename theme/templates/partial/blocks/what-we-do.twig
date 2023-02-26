@@ -1,0 +1,80 @@
+<section class="bg-sand">
+    <div class="parco-container">
+        
+        <div class="lg:py-8 py-4">
+            {% include 'partial/blocks/info-circle.twig' with {
+                circleColor : 'bg-green',
+                textColor : 'text-black',
+                text:'What to do'
+            } %}
+        </div>
+
+        {% set items = [
+            {
+                title : 'Reforestation',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Rewilding',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Afforestation',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Restoration',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Remediation',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'River interventions',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Soil interventions',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Wildlife measures',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            }
+        ] %}
+        
+
+
+        <div class="border-t border-b border-green divide-y divide-green lg:mt-6 mt-4">
+
+            {% for item in items %}
+
+                <div class="cursor-pointer" x-data="{ items{{loop.index}} : false }">
+
+                    <div class="py-4 flex justify-between items-baseline" @click="items{{loop.index}} = !items{{loop.index}}">
+
+                        <div class="text-green">
+                            <div class="flex space-x-4 items-center">
+                                <h4 class="parco-type lg:text-60  text-30">{{item.title}}</h4>
+                            </div>
+                            <div class="w-full transition-all duration-150 h-0" :class="items{{loop.index}} && '!h-4' "></div>
+                            <p class="text-black lg:max-w-[38rem]" x-show="items{{loop.index}}" x-collapse>{{item.description}}</p>
+                        </div>
+
+                        <div>
+                            <div class="relative h-[23px] w-[23px] ml-auto transition-transform duration-300" :class="items{{loop.index}} ? 'rotate-45' : '' ">
+                                <span class="w-full h-[4px] bg-green block absolute inset-0 m-auto"></span>
+                                <span class="w-full h-[4px] bg-green block absolute inset-0 m-auto rotate-90"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./scss/typography";
+@import "./scss/menu";
+@import "./scss/animation";
+@import "./scss/generic";
+
+@layer base {
+    
+    :root {
+        --color: #469555;
+        --setHeaderHeight: 0px;
+        --setHeaderHeightNegative: 0px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        cursor: default;
+    }
+
+    .project-container{
+        @apply mx-4;
+    }
+
+    .h-screen-header{
+        height: calc(100vh - var(--setHeaderHeight));
+    }
+
+    .remove--loader{
+        opacity: 0!important;
+        @apply pointer-events-none;
+    }
+
+    .add--loader{
+        opacity: 100!important;
+    }
+    
+    .underline-a{
+        a:not(.not-this-a){
+            @apply underline;
+        }
+    }
+    
+}

@@ -1,0 +1,17 @@
+<section class="bg-sand">
+    <div class="parco-container py-8 space-y-8  lg:max-w-[63rem]">
+
+        {% include 'partial/blocks/info-circle.twig' with {
+            circleColor : 'bg-green',
+            textColor : 'text-black',
+            text: smallTitle
+        } %}
+
+        <h3 class="text-green lg:text-60 text-30 parco-type  lg:!tracking-[-0.01em]">{{title}}</h3>
+
+        <p>{{description}}</p>
+
+        <a href="{{linkCta}}" class="btn-black lg:text-18">{{titleCta}}</a>
+
+    </div>
+</section>

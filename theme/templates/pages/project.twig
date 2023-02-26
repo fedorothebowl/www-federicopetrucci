@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {# Hero #}
+    <section class="bg-green">
+        <div class="parco-container lg:space-y-20 space-y-12 lg:max-w-[63rem] py-12">
+            <h1 class="flex space-x-2 lg:text-120 text-48 parco-type items-start text-white items-center">
+                <img class="lg:max-w-max max-w-[3rem]" src="{{ site.theme.link }}/assets/img/svg/project-icon-albero.svg" alt="Icona alberto">
+                <span>The project</span>
+            </h1>
+            <h2 class="lg:text-60 text-30 parco-type text-white lg:leading-[auto] leading-none">
+                The project envisioned to <span class="text-black">extend</span>, <span class="text-black">connect</span>, <span class="text-black">protect</span> a network of natural areas  that interconnect Italian urban and coastal areas to forests, creating connections between the Alpine systems, the Apennine and the Mediterranean coast.
+            </h2>
+            <div class="space-y-4 text-white">
+                <p>Parco Italia is a project born from a vision conceived by Stefano Boeri and first discussed at the World Forum on Urban Forests 2019 - Milano Calling and nurtured by collaborative transdisciplinary discourses.</p>
+                <p>In 2019 forests have exceeded land dedicated to agriculture due to the abandonment of agriculture land. The growth of Italian forests can be a trigger for the intensification of risks, e.g. increase in the number and the intensity of fires, especially if the new forests are lacking of management and maintenance. </p>
+                <p>The EU has set the target to protect 30% of EU land by 2030. Italy should increase its percentage of protected areas by at least 8,7% by 2030.</p>
+                <p>Italy needs to work on enlarging its terrestrial  protected area coverage while also protecting  its natural resources and managing them to  minimize the fragmentation risks and  increase ecological connectivity.</p>
+            </div>
+        </div>
+    </section>
+
+    {# project phases #}
+    <section class="bg-sand pt-8 pb-16">
+        <div class="parco-container lg:space-y-16 space-y-6">
+
+            {% include 'partial/blocks/info-circle.twig' with {
+                circleColor : 'bg-green',
+                textColor : 'text-green',
+                text:'Project phases'
+            } %}
+
+            <div class="lg:grid lg:grid-cols-2 text-green gap-20">
+                <div class="lg:space-y-16 space-y-6">
+                    <h3 class="lg:text-60 text-30 parco-type">1. Research</h3>
+                    <p>The implementation phase of the Parco Italia project will be developed by Alberitalia team, be led by Fabio Salbitano, and will include Giorgio Vacchiano, Angela Rositi, Davide Travaglini, Paolo Mori, Marco Marchetti, Renzo Motta. The implementation team will be supported by the above mentioned people and includes Barbara Mariotti  and Lucia Mondanelli. </p>
+                </div>
+                <div class="lg:space-y-16 space-y-6">
+                    <h3 class="lg:text-60 text-30 parco-type lg:pt-0 pt-6">2. Implementation</h3>
+                    <p>The implementation phase of the Parco Italia project will be developed by Alberitalia team, be led by Fabio Salbitano, and will include Giorgio Vacchiano, Angela Rositi, Davide Travaglini, Paolo Mori, Marco Marchetti, Renzo Motta. The implementation team will be supported by the above mentioned people and includes Barbara Mariotti  and Lucia Mondanelli. </p>
+                </div>        
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
+

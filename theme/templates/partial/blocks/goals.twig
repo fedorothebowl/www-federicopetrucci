@@ -1,0 +1,68 @@
+<section class="bg-green">
+
+    <div class="parco-container lg:py-6 py-4">
+
+        {% include 'partial/blocks/info-circle.twig' with {
+            circleColor : 'bg-white',
+            textColor : 'text-white',
+            text:'The goals'
+        } %}
+
+        {% set goals = [
+            {
+                title : 'Extend',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Connect',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Protect',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            },
+            {
+                title : 'Make',
+                description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nisi beatae accusantium voluptatem officia, perspiciatis doloribus totam cum, quas aliquam a laborum est rem ipsam distinctio provident iure eveniet aliquid.'
+            }
+        ] %}
+        
+
+
+        <div class="border-t border-b border-white divide-y divide-white lg:mt-6 mt-4">
+
+            {% for goal in goals %}
+
+                <div class="cursor-pointer" x-data="{ goals{{loop.index}} : false }">
+
+                    <div class="flex justify-between items-baseline py-4" @click="goals{{loop.index}} = !goals{{loop.index}}">
+
+                        <div class="text-white">
+                            <div class="flex space-x-4 items-center">
+                                <div class="lg:h-[3.75rem] h-[2.4rem] lg:w-[3.75rem] w-[2.4rem] rounded-full border-[4px] border-white flex items-center justify-center">
+                                    <p class="parco-type lg:text-39 text-27 {% if loop.first %}mr-1{% endif %}">{{loop.index}}</p>
+                                </div>
+                                <h4 class="parco-type lg:text-60 text-30">{{goal.title}}</h4>
+                            </div>
+                            <div class="w-full transition-all duration-150 h-0" :class="goals{{loop.index}} && '!h-4' "></div>
+                            <p class="text-black lg:max-w-[32rem] lg:ml-[4.65rem]" x-show="goals{{loop.index}}" x-collapse>{{goal.description}}</p>
+                        </div>
+
+                        <div>
+                            <div class="relative h-[23px] w-[23px] ml-auto transition-transform duration-300" :class="goals{{loop.index}} ? 'rotate-45' : '' ">
+                                <span class="w-full h-[4px] bg-white block absolute inset-0 m-auto"></span>
+                                <span class="w-full h-[4px] bg-white block absolute inset-0 m-auto rotate-90"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>  
